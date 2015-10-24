@@ -11,4 +11,4 @@ github_username:  sartan
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+highlighter: pygments
