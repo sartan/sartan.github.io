@@ -27,6 +27,15 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
+  <!-- Force HTTPS -->
+  {% if site.force-https %}
+    <script>
+    // Don't force http when serving the website locally
+    if (!(window.location.host.startsWith("127.0.0.1") || window.location.host.startsWith("localhost")) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+  {% endif %}
+
   <!-- Google Analytics -->
   {% include analytics.html %}
 </head>
